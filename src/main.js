@@ -1,4 +1,3 @@
-
 //Style initializers
 var THEME = require('themes/flat/theme');
 var BUTTONS = require('controls/buttons');
@@ -6,6 +5,7 @@ var whiteSkin = new Skin({fill:"white"});
 var titleStyle = new Style({font:"bold 70px", color:"black"});
 var buttonStyle = new Style({font:"35px", color:"black"}); //Have to change the size 
 
+//Variable declarations
 var API_KEY = "ef180bd4d6922fb2e60e2c1fb72de6b2";
 var search = "";
 var current_comic = 1; 
@@ -13,6 +13,7 @@ var last_comic;
 var safe_title = "";
 var image = "";
 
+//Column declarations
 var mainColumn = new Column({
 	left: 0, right: 0, top: 0, bottom: 0,
 	skin: whiteSkin,
@@ -97,7 +98,6 @@ Handler.bind("/getRecentXKCD", {
 		trace("Image updated: " + image + "\n");
 		mainColumn.picture.url = image;
 		mainColumn.title.string = "XKCD Comic #" + current_comic;
-		trace("Current Stack: " + backStack + "\n");
 		trace("Returned Title is: " + json.safe_title + "\n");
 	}
 });
